@@ -3245,7 +3245,7 @@ li.tax {
         font-size: 14px;
     }
 }
-@media (max-width:375px) {
+@media (max-width:397px) {
     .pro-cart {
         display: block;
         margin-top: 10px;

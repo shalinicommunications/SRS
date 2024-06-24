@@ -107,7 +107,7 @@ let prevWidth = null;
         $('.product-carousel').each(function () {
             if ($(this).closest('#column-left').length == 0 && $(this).closest('#column-right').length == 0) {
                 $(this).addClass('owl-carousel owl-theme');
-                const items = $(this).data('items') || 5;
+                const items = $(this).data('items') || 8;
                 const sliderOptions = {
                     loop: false,
                     rewind: false,
@@ -122,19 +122,19 @@ let prevWidth = null;
                     responsiveRefreshRate: 200,
                     responsive: {
                         0: {
-                            items: 1,
-                            margin: 10
-                        },
-                        320: {
-                            items: ((items - 3) > 1) ? (items - 3) : 1,
+                            items: 2, /* Show 2 items on the smallest screens */
                             margin: 10
                         },
                         576: {
-                            items: ((items - 2) > 1) ? (items - 2) : 1,
+                            items: 2,
                             margin: 10
                         },
+                        768: {
+                            items: 4, /* Show 4 items on medium screens */
+                            margin: 20
+                        },
                         992: {
-                            items: ((items - 1) > 1) ? (items - 1) : 1,
+                            items: 4,
                             margin: 30
                         },
                         1200: {
@@ -142,11 +142,30 @@ let prevWidth = null;
                             margin: 30
                         }
                     }
-                };                
+                };
                 $(this).owlCarousel(sliderOptions);
             }
         });
     }
+    
+    // Call the function on document ready
+    $(document).ready(function() {
+        setProductCarousel();
+    });
+
+// Call the function on document ready
+$(document).ready(function() {
+    setProductCarousel();
+});
+// Call the function on document ready
+$(document).ready(function() {
+    setProductCarousel();
+});
+    
+    // Call the function on document ready
+    $(document).ready(function() {
+        setProductCarousel();
+    });
 
     /*----------
     Blog Slider
@@ -163,19 +182,24 @@ let prevWidth = null;
         items: 1,
         responsiveClass: false,
         responsive: {
-            320: {
-                items: 1
+            0: {
+                items: 2, /* Show 2 items on the smallest screens */
+                margin: 10
             },
-            768: {
+            576: {
                 items: 2,
                 margin: 10
             },
+            768: {
+                items: 4, /* Show 4 items on medium screens */
+                margin: 20
+            },
             992: {
-                items: 2,
+                items: 4,
                 margin: 30
-            },           
+            },
             1200: {
-                items: 3,
+                items: items,
                 margin: 30
             }
         }
@@ -283,30 +307,23 @@ let prevWidth = null;
         responsiveClass: false,
         responsive: {
             0: {
-                items: 1,
+                items: 2, /* Show 2 items on the smallest screens */
+                margin: 10
             },
-            320: {
+            576: {
                 items: 2,
                 margin: 10
             },
-            426: {
-                items: 3,
-                margin: 10
-            },
-            481: {
-                items: 4,
-                margin: 10
-            },
             768: {
-                items: 3,
-                margin: 10
+                items: 4, /* Show 4 items on medium screens */
+                margin: 20
             },
             992: {
-                items: 3,
+                items: 4,
                 margin: 30
             },
             1200: {
-                items: 4,
+                items: items,
                 margin: 30
             }
         }
